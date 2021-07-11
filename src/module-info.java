@@ -6,4 +6,5 @@ module EmailClient {
 
     opens pl.emailclient;
     opens pl.emailclient.view;
+    opens pl.emailclient.controller;
 }
