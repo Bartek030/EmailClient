@@ -8,6 +8,7 @@ import pl.emailclient.EmailManager;
 import pl.emailclient.controller.BaseController;
 import pl.emailclient.controller.LoginWindowController;
 import pl.emailclient.controller.MainWindowController;
+import pl.emailclient.controller.OptionsWindowController;
 
 import java.io.IOException;
 
@@ -26,6 +27,11 @@ public class ViewFactory {
 
     public void showMainWindow() {
         BaseController controller = new MainWindowController(emailManager, this, "MainWindow.fxml");
+        initializeStage(controller);
+    }
+
+    public void showOptionsWindow() {
+        BaseController controller = new OptionsWindowController(emailManager, this, "OptionsWindow.fxml");
         initializeStage(controller);
     }
 
