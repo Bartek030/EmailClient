@@ -20,6 +20,27 @@ public class ViewFactory {
         this.emailManager = emailManager;
     }
 
+    // View options handling
+    private ColorTheme colorTheme = ColorTheme.DEFAULT;
+
+    public ColorTheme getColorTheme() {
+        return colorTheme;
+    }
+
+    public void setColorTheme(ColorTheme colorTheme) {
+        this.colorTheme = colorTheme;
+    }
+
+    public FontSize getFontSize() {
+        return fontSize;
+    }
+
+    public void setFontSize(FontSize fontSize) {
+        this.fontSize = fontSize;
+    }
+
+    private FontSize fontSize = FontSize.MEDIUM;
+
     public void showLoginWindow() {
         BaseController controller = new LoginWindowController(emailManager, this, "loginWindow.fxml");
         initializeStage(controller);
