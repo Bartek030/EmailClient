@@ -1,6 +1,7 @@
 package pl.emailclient.controller;
 
 import javafx.fxml.FXML;
+import javafx.fxml.Initializable;
 import javafx.scene.control.Label;
 import javafx.scene.control.PasswordField;
 import javafx.scene.control.TextField;
@@ -10,7 +11,10 @@ import pl.emailclient.controller.services.LoginService;
 import pl.emailclient.model.EmailAccount;
 import pl.emailclient.view.ViewFactory;
 
-public class LoginWindowController extends BaseController {
+import java.net.URL;
+import java.util.ResourceBundle;
+
+public class LoginWindowController extends BaseController implements Initializable {
     @FXML
     private TextField emailAddressField;
 
@@ -41,6 +45,17 @@ public class LoginWindowController extends BaseController {
                         Stage stage = (Stage) errorLabel.getScene().getWindow();
                         viewFactory.closeStage(stage);
                         return;
+
+                    case FAILED_BY_CREDENTIALS:
+                        errorLabel.setText("Invalid credentials!");
+                        return;
+
+                    case FAILED_BY_UNEXPECTED_ERROR:
+                        errorLabel.setText("Unexpected error!");
+                        return;
+
+                    default:
+                        return;
                 }
             });
 
@@ -59,5 +74,11 @@ public class LoginWindowController extends BaseController {
         }
 
         return true;
+    }
+
+    @Override
+    public void initialize(URL url, ResourceBundle resourceBundle) {
+        emailAddressField.setText("bartlomiej.swies.test@gmail.com");
+        passwordField.setText("~J$N@^!zP@%^|QNX");
     }
 }
