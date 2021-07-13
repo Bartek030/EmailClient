@@ -3,11 +3,9 @@ package pl.emailclient.controller;
 import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
 import javafx.scene.control.TableView;
-import javafx.scene.control.TreeItem;
 import javafx.scene.control.TreeView;
 import javafx.scene.web.WebView;
 import pl.emailclient.EmailManager;
-import pl.emailclient.model.EmailAccount;
 import pl.emailclient.view.ViewFactory;
 
 import java.net.URL;
