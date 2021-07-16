@@ -32,6 +32,14 @@ public class EmailMessage {
         this.message = message;
     }
 
+    public boolean hasAttachments() {
+        return hasAttachments;
+    }
+
+    public List<MimeBodyPart> getAttachmentList() {
+        return attachmentList;
+    }
+
     public String getSubject() {
         return this.subject.get();
     }
